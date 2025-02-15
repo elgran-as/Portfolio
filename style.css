@@ -99,5 +99,31 @@ bg-dark-custom {
 img {
   pointer-events: none; /* Bloquea la interacción con la imagen */
   -webkit-user-drag: none; /* Desactiva el arrastre en navegadores basados en WebKit */
-  user-drag: none; /* Desactiva el arrastre en navegadores modernos */
+  user-select: none; /* Desactiva el arrastre en navegadores modernos */
+
+}
+
+img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+}
+
+.image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0); /* Transparente */
+  z-index: 1; /* Asegúrate de que esté encima de la imagen */
 }
