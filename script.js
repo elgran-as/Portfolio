@@ -21,24 +21,44 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inicializar el idioma por defecto a español
   toggleLanguage('es');
 
-  // Rotación de título
+  /* ============================
+     Efecto typewriter en el Hero Title
+     ============================ */
   const heroTitles = [
+    'Diseño web e Ilustración',
     'Professional Frontend Developer',
     'Desarrollo de Aplicaciones',
-    'Diseño e Ilustración'
+    'Diseño UX / UI'
   ];
-  let index = 0;
+  let titleIndex = 0;
   const heroTitleElement = document.getElementById('hero-title');
 
-  function rotateHeroTitle() {
-    heroTitleElement.textContent = heroTitles[index];
-    index = (index + 1) % heroTitles.length;
+  // Función que escribe letra por letra
+  function typeWriter(element, text, i, callback) {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      setTimeout(() => typeWriter(element, text, i + 1, callback), 100);
+    } else {
+      if (callback) callback();
+    }
   }
 
-  setInterval(rotateHeroTitle, 5000); // Cambia el título cada 5 segundos
-  rotateHeroTitle(); // Inicializa el título al cargar la página
+  // Función para rotar los títulos con efecto de escritura
+  function rotateTitles() {
+    heroTitleElement.textContent = "";
+    typeWriter(heroTitleElement, heroTitles[titleIndex], 0, () => {
+      // Espera 3 segundos después de terminar de escribir
+      setTimeout(() => {
+        titleIndex = (titleIndex + 1) % heroTitles.length;
+        rotateTitles();
+      }, 3000);
+    });
+  }
+  rotateTitles();
 
-  // Manejo del envío del formulario
+  /* ============================
+     Manejo del envío del formulario
+     ============================ */
   document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -90,49 +110,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
   });
-});
 
-document.addEventListener("DOMContentLoaded", function() {
+  /* ============================
+     Efecto de movimiento de palabras
+     ============================ */
   const words = document.querySelectorAll('.words span');
 
   function moveWords() {
-      words.forEach(word => {
-          const randomX = Math.random() * 100 - 50; // Valor entre -50 y 50
-          const randomY = Math.random() * 100 - 50; // Valor entre -50 y 50
-          word.style.transform = `translate(${randomX}px, ${randomY}px)`; // Aplica el desplazamiento
-          word.style.opacity = 0; // Oculta la palabra antes de moverla
-      });
+    words.forEach(word => {
+      const randomX = Math.random() * 100 - 50; // Valor entre -50 y 50
+      const randomY = Math.random() * 100 - 50; // Valor entre -50 y 50
+      word.style.transform = `translate(${randomX}px, ${randomY}px)`; // Aplica el desplazamiento
+      word.style.opacity = 0; // Oculta la palabra antes de moverla
+    });
 
-      // Esperar un momento antes de mostrar la palabra en su nueva posición
-      setTimeout(() => {
-          words.forEach(word => {
-              word.style.opacity = 0.2; // Muestra la palabra en su nueva posición
-          });
-      }, 500); // Espera 500ms antes de hacerla visible
+    // Esperar un momento antes de mostrar la palabra en su nueva posición
+    setTimeout(() => {
+      words.forEach(word => {
+        word.style.opacity = 0.2; // Muestra la palabra en su nueva posición
+      });
+    }, 500); // Espera 500ms antes de hacerla visible
   }
 
   // Cambiar posiciones cada 4 segundos
   setInterval(moveWords, 4000);
-});
 
-document.getElementById('current-year').textContent = new Date().getFullYear();
+  /* ============================
+     Actualización del año actual (con efecto neón en el CSS)
+     ============================ */
+  document.getElementById('current-year').textContent = new Date().getFullYear();
 
-// Deshabilitar clic derecho
-document.addEventListener('contextmenu', function (event) {
-  event.preventDefault();
-});
+  /* ============================
+     Deshabilitar funciones de copiar/arrastrar
+     ============================ */
+  // Deshabilitar clic derecho
+  document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+  });
 
-// Deshabilitar teclas comunes para copiar contenido (CTRL+C, CTRL+S, etc.)
-document.addEventListener('keydown', function (event) {
-  if ((event.ctrlKey || event.metaKey) && (event.key === 'c' || event.key === 's' || event.key === 'u')) {
+  // Deshabilitar teclas comunes para copiar contenido (CTRL+C, CTRL+S, etc.)
+  document.addEventListener('keydown', function (event) {
+    if ((event.ctrlKey || event.metaKey) && (event.key === 'c' || event.key === 's' || event.key === 'u')) {
       event.preventDefault();
-  }
-});
+    }
+  });
 
-// Deshabilitar el arrastre de imágenes
-document.addEventListener('dragstart', function (event) {
-  if (event.target.tagName === 'IMG') {
+  // Deshabilitar el arrastre de imágenes
+  document.addEventListener('dragstart', function (event) {
+    if (event.target.tagName === 'IMG') {
       event.preventDefault();
-  }
+    }
+  });
 });
-
