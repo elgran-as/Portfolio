@@ -117,20 +117,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const words = document.querySelectorAll('.words span');
 
   function moveWords() {
-    words.forEach(word => {
-      const randomX = Math.random() * 100 - 50; // Valor entre -50 y 50
-      const randomY = Math.random() * 100 - 50; // Valor entre -50 y 50
-      word.style.transform = `translate(${randomX}px, ${randomY}px)`; // Aplica el desplazamiento
-      word.style.opacity = 0; // Oculta la palabra antes de moverla
-    });
+    requestAnimationFrame(() => {
+        words.forEach(word => {
+            const randomX = Math.random() * 100 - 50;
+            const randomY = Math.random() * 100 - 50;
+            word.style.transform = `translate(${randomX}px, ${randomY}px)`;
+            word.style.opacity = 0;
+        });
 
-    // Esperar un momento antes de mostrar la palabra en su nueva posición
-    setTimeout(() => {
-      words.forEach(word => {
-        word.style.opacity = 0.2; // Muestra la palabra en su nueva posición
-      });
-    }, 500); // Espera 500ms antes de hacerla visible
-  }
+        setTimeout(() => {
+            words.forEach(word => {
+                word.style.opacity = 0.2;
+            });
+        }, 500);
+    });
+}
 
   // Cambiar posiciones cada 4 segundos
   setInterval(moveWords, 4000);
