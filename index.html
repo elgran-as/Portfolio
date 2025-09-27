@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Desarrollador Frontend</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/x-icon" href="./img/aas-dev.ico">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo-portfolio">
+                    <a href="#inicio" aria-label="Inicio">
+                        <img src="./img/logos/logo-portfolio.png" alt="Logo Portfolio" />
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-image">
+                    <img src="./img/hero_image.png" alt="Desarrollador Frontend" class="profile-image">
+                </div>
+                <div class="hero-content">
+                    <h1>Desarrollador Frontend<br>Diseño UX /UI</h1>
+                    <h2 id="hero-title"></h2>
+                    <p>Creando interfaces, funcionales y soluciones digitales</p>
+                    <div class="hero-buttons">
+                        <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                        <a href="#contacto" class="btn btn-secondary">Contactar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <!-- SVG decorativo centrado -->
+            <div class="about-svg-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="800" height="120">
+                    <g transform="translate(20,20)">
+                        <rect class="key press-1" x="0" y="0" width="90" height="80" rx="10" ry="10" />
+                        <text class="letter" x="45" y="45">A</text>
+                    </g>
+                    <g transform="translate(115,20)">
+                        <rect class="key press-2" x="0" y="0" width="90" height="80" rx="10" ry="10" />
+                        <text class="letter" x="45" y="45">A</text>
+                    </g>
+                    <g transform="translate(210,20)">
+                        <rect class="key press-3" x="0" y="0" width="90" height="80" rx="10" ry="10" />
+                        <text class="letter" x="45" y="45">S</text>
+                    </g>
+                    <g transform="translate(305,20)">
+                        <rect class="key press-4" x="0" y="0" width="90" height="80" rx="10" ry="10" />
+                        <text class="letter" x="45" y="45">/</text>
+                    </g>
+                    <g transform="translate(400,20)">
+                        <rect class="key press-5" x="0" y="0" width="90" height="80" rx="10" ry="10" />
+                        <text class="letter" x="45" y="45">D</text>
+                    </g>
+                    <g transform="translate(495,20)">
+                        <rect class="key press-6" x="0" y="0" width="90" height="80" rx="10" ry="10" />
+                        <text class="letter" x="45" y="45">E</text>
+                    </g>
+                    <g transform="translate(590,20)">
+                        <rect class="key press-7" x="0" y="0" width="90" height="80" rx="10" ry="10" />
+                        <text class="letter" x="45" y="45">V</text>
+                    </g>
+                </svg>
+            </div>
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <img src="./img/sobre_mi.png" alt="Desarrollador Frontend" class="profile-image">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Desarrollador Frontend con formación en HTML, CSS, JavaScript y diseño UI/UX</h3>
+                    <p>
+                        Actualmente estoy estudiando <strong>Fullstack con Node.js</strong>.
+                        <strong>Introducción a Python e Inteligencia Artificial</strong><br>
+                        Tengo experiencia en desarrollo web adaptable, accesibilidad y diseño centrado en el usuario.
+                        Apasionado por crear interfaces intuitivas y colaborativas.
+                    </p>
+                    <div class="about-details">
+                        <div class="detail">
+                            <i class="fas fa-code"></i>
+                            <h4>Desarrollo Web</h4>
+                            <p>Creación de sitios web responsivos y optimizados</p>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-palette"></i>
+                            <h4>Diseño UI/UX</h4>
+                            <p>Interfaces atractivas centradas en la experiencia del usuario</p>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Diseño Responsivo</h4>
+                            <p>Adaptación a todos los dispositivos y tamaños de pantalla</p>
+                        </div>
+                    </div>
+                    <a href="./CV-ARIEL SALVIA.pdf" class="btn btn-primary">Descargar CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-col">
+                    <div class="skill-col-title">🌐 Frontend</div>
+                    <ul class="skill-list">
+                        <li><i class="fab fa-html5"></i> HTML5</li>
+                        <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                        <li><i class="fab fa-js-square"></i> JavaScript</li>
+                        <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                    </ul>
+                </div>
+                <div class="skill-col">
+                    <div class="skill-col-title">📱 Mobile & Backend</div>
+                    <ul class="skill-list">
+                        <li><i class="fab fa-react"></i> React Native</li>
+                        <li><i class="fas fa-fire"></i> Firebase</li>
+                        <li><i class="fas fa-sync-alt"></i> Redux Toolkit</li>
+                        <li><i class="fab fa-node-js"></i> Node.js <span class="in-progress">(in progress)</span></li>
+                        <li><i class="fab fa-python"></i> Python <span class="in-progress">(in progress)</span></li>
+                        
+                    </ul>
+                </div>
+                <div class="skill-col">
+                    <div class="skill-col-title">🎨 UX/UI Design</div>
+                    <ul class="skill-list">
+                        <li><i class="fab fa-figma"></i> Figma</li>
+                        <li><i class="fas fa-layer-group"></i> Canva <span class="freelance">(freelance)</span></li>
+                    </ul>
+                </div>
+                <div class="skill-col">
+                    <div class="skill-col-title">🛠 Tools</div>
+                    <ul class="skill-list">
+                        <li><i class="fab fa-git-alt"></i> Git</li>
+                        <li><i class="fab fa-github"></i> GitHub</li>
+                        <li><i class="fas fa-brain"></i> Inteligencia Artificial</span></li>
+                        <li><i class="fas fa-code"></i> Dreamweaver</li>
+                        <li><i class="fas fa-paint-brush"></i> CorelDRAW</li>
+                        <li><i class="fas fa-image"></i> Fireworks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="projects">
+        <!-- Carrusel de logos de proyectos realizados -->
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <a href="https://elgran-as.github.io/paz-animal/" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/paz_logo.svg" alt="paz-animal">
+                </a>
+                <a href="https://jov-muebles.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/jov_logo.png" alt="jov-muebles">
+                </a>
+                <a href=https://errante-fotografia.netlify.app/ target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/fotografia_logo.png" alt="errante-fotografia">
+                </a>
+                <a href="https://herreria-osky.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/herreria_logo.png" alt="herreria-osky">
+                </a>
+                <a href="https://tienda-de-remera.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/tdr_logo.png" alt="tienda-de-remera">
+                </a>
+                <a href="https://q-comemos.com.ar" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/q-comemos_logo.png" alt="q-comemos">
+                </a>
+                <a href="https://l14-corp.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/L14-corp_logo.png" alt="L14-Corp">
+                </a>
+                <a href="https://jc-automocion.netlify.app" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/jc-automocion_logo.png" alt="jc-automocion">
+                </a>
+                <!-- Repite los logos para efecto infinito -->
+                <a href="https://elgran-as.github.io/paz-animal/" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/paz_logo.svg" alt="paz-animal">
+                </a>
+                <a href="https://jov-muebles.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/jov_logo.png" alt="jov-muebles">
+                </a>
+                <a href="https://errante-fotografia.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/fotografia_logo.png" alt="errante-fotografia">
+                </a>
+                <a href="https://herreria-osky.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/herreria_logo.png" alt="herreria-osky">
+                </a>
+                <a href="https://tienda-de-remera.netlify.app/" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/tdr_logo.png" alt="tienda-de-remera">
+                </a>
+                <a href="https://q-comemos.com.ar" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/q-comemos_logo.png" alt="q-comemos">
+                </a>
+                <a href="https://l14-corp.netlify.app" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/L14-corp_logo.png" alt="L14-Corp">
+                </a>
+                <a href="https://jc-automocion.netlify.app" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/jc-automocion_logo.png" alt="jc-automocion">
+                </a>
+            </div>
+        </div>
+        <!-- ...rest of projects section... -->
+        </div>
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/img/proyect/L14-corp.png" alt="L14-Corp">
+                    </div>
+                    <div class="project-info">
+                        <h3>L14-Corp: Plataforma para alquiler de departamentos y transporte</h3>
+                        <p>Plataforma web para gestión y alquiler.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Tailwind</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://l14-corp.netlify.app" class="btn btn-small" target="_blank"
+                                rel="noopener noreferrer">Ver Demo</a>
+                            <a href="https://github.com/elgran-as/L14_corp" class="btn btn-small btn-secondary"
+                                target="_blank" rel="noopener noreferrer">Ver Código</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/img/proyect/Q-Comemos.png" alt="Q-Comemos">
+                    </div>
+                    <div class="project-info">
+                        <h3>Organización de Comidas</h3>
+                        <p>Aplicación de organización de comidas con planificador de menús y gestión de listas de
+                            compras.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://elgran-as.github.io/Q-Comemos/" class="btn btn-small" target="_blank"
+                                rel="noopener noreferrer">Ver Demo</a>
+                            <a href="https://github.com/elgran-as/Q-Comemos" class="btn btn-small btn-secondary"
+                                target="_blank" rel="noopener noreferrer">Ver Código</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="/img/proyect/TDR.png" alt="TDR">
+                    </div>
+                    <div class="project-info">
+                        <h3>E-Commerce: Tienda de Ropa</h3>
+                        <p>Aplicación de comercio electrónico con carrito de compras y gestión de pedidos.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://tienda-de-remera.netlify.app/" class="btn btn-small" target="_blank"
+                                rel="noopener noreferrer">Ver Demo</a>
+                            <a href="https://github.com/elgran-as" class="btn btn-small btn-secondary" target="_blank"
+                                rel="noopener noreferrer">Ver Código</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>¿Tienes un proyecto en mente?</h3>
+                    <p>Estoy disponible para trabajos freelance y oportunidades laborales. ¡Contáctame!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ariel.salvia78@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+54 11 </span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Buenos Aires, Argentina</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/ariel-salvia-dev" class="social-link" target="_blank"
+                            rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/elgran-as" class="social-link" target="_blank"
+                            rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://www.behance.net/AASDEV" class="social-link" target="_blank"
+                            rel="noopener noreferrer"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo-portfolio">
+                    <a href="#inicio" aria-label="Inicio">
+                        <img src="./img/logos/logo-portfolio.png" alt="Logo Portfolio" />
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#sobre-mi">Sobre Mí</a>
+                    <a href="#habilidades">Habilidades</a>
+                    <a href="#proyectos">Proyectos</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/ariel-salvia-dev" class="social-link" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/elgran-as" class="social-link" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.behance.net/AASDEV" class="social-link" target="_blank"
+                        rel="noopener noreferrer" aria-label="Behance">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Portfolio Desarrollador Frontend. Todos los derechos
+                    reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
