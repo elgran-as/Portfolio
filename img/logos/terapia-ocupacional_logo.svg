@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title description">
+  <title id="title">Terapia Ocupacional</title>
+  <desc id="description">Símbolo de una persona con los brazos abiertos junto al nombre Terapia Ocupacional.</desc>
+  <circle cx="80" cy="58" r="39" fill="#e7f3ef"/>
+  <circle cx="80" cy="39" r="8" fill="#e58a5b"/>
+  <path d="M80 54v22M80 61 59 47M80 61l21-14M80 76 64 92M80 76l16 16" fill="none" stroke="#34786f" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+  <text x="80" y="119" fill="#24443f" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1.2" text-anchor="middle">TERAPIA</text>
+  <text x="80" y="136" fill="#24443f" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" letter-spacing=".8" text-anchor="middle">OCUPACIONAL</text>
+</svg>

@@ -4,14 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Ariel Salvia">
-    <meta name="description" content="Portfolio de Professional Frontend Developer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Portfolio de Ariel Salvia - Professional Frontend Developer especializado en desarrollo web, aplicaciones móviles y diseño UI/UX">
+        content="Portfolio de Ariel Salvia: diseño UX/UI y desarrollo de sitios web y aplicaciones para negocios. Conoce sus proyectos y solicita una propuesta.">
     <meta name="keywords"
-        content="HTML, CSS, Javascript, Bootstrap, React Native, Frontend Developer, Diseño Web, UI/UX, Desarrollo de Aplicaciones">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Desarrollador Frontend</title>
+        content="Desarrollo web, Node.js, JavaScript, React, Python, UX/UI, inteligencia artificial, ciberseguridad, sitios web, aplicaciones">
+    <title>Ariel Salvia | Desarrollo web, apps y UX/UI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
@@ -27,21 +25,24 @@
             <nav class="navbar">
                 <div class="logo-portfolio">
                     <a href="#inicio" aria-label="Inicio">
-                        <img src="./img/logos/logo-portfolio.png" alt="Logo Portfolio" />
+                        <img src="./img/logos/logo-portfolio-warm.svg" alt="AAS Dev" />
+                        <span class="logo-dev-label" aria-hidden="true">DEV</span>
                     </a>
                 </div>
-                <ul class="nav-links">
+                <ul class="nav-links" id="primary-navigation">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#habilidades">Habilidades</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" type="button" aria-label="Abrir menú" aria-controls="primary-navigation"
+                    aria-expanded="false">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -49,18 +50,106 @@
     <section id="inicio" class="hero">
         <div class="container">
             <div class="hero-wrapper">
-                <div class="hero-image">
-                    <img src="./img/hero_image.png" alt="Desarrollador Frontend" class="profile-image">
-                </div>
                 <div class="hero-content">
-                    <h1>Desarrollador Frontend<br>Diseño UX /UI</h1>
+                    <p class="hero-eyebrow">Ariel Salvia · Desarrollo web y diseño digital</p>
+                    <h1>Sitios web y aplicaciones para hacer crecer tu negocio</h1>
                     <h2 id="hero-title"></h2>
-                    <p>Creando interfaces, funcionales y soluciones digitales</p>
+                    <p>Diseño experiencias claras y desarrollo soluciones digitales adaptadas a tus objetivos.</p>
                     <div class="hero-buttons">
-                        <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
-                        <a href="#contacto" class="btn btn-secondary">Contactar</a>
+                        <a href="#contacto" class="btn btn-primary">Cuéntame tu idea</a>
+                        <a href="#proyectos" class="btn btn-secondary">Explorar proyectos</a>
                     </div>
                 </div>
+                <div class="character-select">
+                    <div class="character-select-heading">
+                        <span class="game-kicker">PLAYER 01 · TECH ALCHEMIST</span>
+                        <span class="character-instructions">Elegí una especialidad</span>
+                    </div>
+                    <div class="character-grid" aria-label="Especialidades">
+                        <button class="character-card" type="button" data-character="Frontend Developer"
+                            data-skill-focus="frontend" aria-pressed="false">
+                            <span class="character-art">
+                                <img src="./img/card-frontend.svg" alt="" class="character-image" fetchpriority="high">
+                                <span class="character-level">LVL 01</span>
+                                <span class="character-watermark" aria-hidden="true">AAS · DEV</span>
+                            </span>
+                            <span class="character-name"><span>01</span> Frontend Dev <span class="character-arrow">↗</span></span>
+                        </button>
+                        <button class="character-card" type="button" data-character="Diseño UX/UI"
+                            data-skill-focus="design" aria-pressed="false">
+                            <span class="character-art">
+                                <img src="./img/card-ux-ui.svg" alt="" class="character-image">
+                                <span class="character-level">LVL 02</span>
+                                <span class="character-watermark" aria-hidden="true">AAS · DEV</span>
+                            </span>
+                            <span class="character-name"><span>02</span> UX / UI Design <span class="character-arrow">↗</span></span>
+                        </button>
+                        <button class="character-card" type="button" data-character="Ciberseguridad"
+                            data-skill-focus="security" aria-pressed="false">
+                            <span class="character-art">
+                                <video class="character-image character-video" id="cybersecurityVideo" muted loop
+                                    playsinline preload="metadata" poster="./img/character-cybersecurity.png"
+                                    aria-label="Video de ciberseguridad">
+                                    <source src="./img/cybersecurity.mp4" type="video/mp4">
+                                </video>
+                                <span class="character-level">LVL 03</span>
+                                <span class="character-watermark" aria-hidden="true">AAS · DEV</span>
+                            </span>
+                            <span class="character-name"><span>03</span> Cyber Security <span class="character-arrow">↗</span></span>
+                        </button>
+                    </div>
+                    <p class="character-status" id="characterStatus" role="status" aria-live="polite">
+                        <span class="status-dot"></span>
+                        <span id="characterStatusText">Mové el cursor para el efecto 3D o elegí una tarjeta para explorar habilidades</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="services">
+        <div class="container">
+            <p class="section-eyebrow">Soluciones para tu proyecto</p>
+            <h2 class="section-title">¿Qué puedo crear para ti?</h2>
+            <p class="section-intro">Desde una primera presencia online hasta una aplicación a medida: conversemos sobre
+                lo que necesita tu negocio.</p>
+            <div class="services-grid">
+                <article class="service-card">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
+                    <h3>Sitios web y landing pages</h3>
+                    <p>Páginas responsivas para presentar tu negocio, tus servicios o una campaña.</p>
+                    <a href="#contacto" class="service-link" data-service="Sitio web o landing page">Hablemos de tu web <span aria-hidden="true">→</span></a>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                    <h3>Aplicaciones web</h3>
+                    <p>Experiencias interactivas y herramientas digitales pensadas para tus usuarios.</p>
+                    <a href="#contacto" class="service-link" data-service="Aplicación web">Hablemos de tu app <span aria-hidden="true">→</span></a>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-store" aria-hidden="true"></i>
+                    <h3>Tiendas online</h3>
+                    <p>Una vidriera digital clara para mostrar productos y facilitar consultas o ventas.</p>
+                    <a href="#contacto" class="service-link" data-service="Tienda online">Quiero vender online <span aria-hidden="true">→</span></a>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-pen-ruler" aria-hidden="true"></i>
+                    <h3>Diseño UX/UI</h3>
+                    <p>Prototipos e interfaces intuitivas, diseñadas con foco en las personas.</p>
+                    <a href="#contacto" class="service-link" data-service="Diseño UX/UI">Diseñemos la experiencia <span aria-hidden="true">→</span></a>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>
+                    <h3>Integraciones e IA aplicada</h3>
+                    <p>Ideas para incorporar herramientas digitales e inteligencia artificial a tu flujo de trabajo.</p>
+                    <a href="#contacto" class="service-link" data-service="Integraciones o IA aplicada">Explorar una idea <span aria-hidden="true">→</span></a>
+                </article>
+                <article class="service-card">
+                    <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
+                    <h3>Mantenimiento y mejoras</h3>
+                    <p>Actualizaciones, ajustes visuales y mejoras para que tu sitio siga acompañando tu negocio.</p>
+                    <a href="#contacto" class="service-link" data-service="Mantenimiento o mejora web">Mejorar mi sitio <span aria-hidden="true">→</span></a>
+                </article>
             </div>
         </div>
     </section>
@@ -102,18 +191,20 @@
             </div>
             <h2 class="section-title">Sobre Mí</h2>
             <div class="about-content">
-                <div class="about-image">
+                <div class="about-image character-about-image">
                     <div class="image-placeholder">
-                        <img src="./img/sobre_mi.png" alt="Desarrollador Frontend" class="profile-image">
+                        <img src="./img/character-frontend.png" alt="Ilustración de Ariel desarrollando una interfaz"
+                            class="profile-image">
                     </div>
+                    <span class="game-kicker">PLAYER 01 · ARIEL SALVIA</span>
                 </div>
                 <div class="about-text">
-                    <h3>Desarrollador Frontend con formación en HTML, CSS, JavaScript y diseño UI/UX</h3>
+                    <h3>Desarrollo web con mirada de diseño y foco en las personas</h3>
                     <p>
-                        Actualmente estoy estudiando <strong>Fullstack con Node js</strong>.
-                        <strong>Introducción a Python e <br>Inteligencia Artificial ,</strong>como herramienta de apoyo.<br>
-                        Tengo experiencia en desarrollo web adaptable, accesibilidad y diseño centrado en el usuario. <br>
-                        Apasionado por crear interfaces intuitivas y colaborativas.
+                        Soy Ariel, desarrollador web con formación en Frontend, React, diseño UX/UI y desarrollo de
+                        aplicaciones. Sigo ampliando mis conocimientos en Fullstack con Node.js y JavaScript,
+                        Python, inteligencia artificial aplicada y ciberseguridad.
+                        Me interesa crear experiencias accesibles, adaptables y útiles para personas y negocios.
                     </p>
                     <div class="about-details">
                         <div class="detail">
@@ -132,7 +223,6 @@
                             <p>Adaptación a todos los dispositivos y tamaños de pantalla</p>
                         </div>
                     </div>
-                    <a href="./CV-ARIEL SALVIA.pdf" class="btn btn-primary">Descargar CV</a>
                 </div>
             </div>
         </div>
@@ -142,16 +232,17 @@
         <div class="container">
             <h2 class="section-title">Habilidades Técnicas</h2>
             <div class="skills-grid">
-                <div class="skill-col">
+                <div class="skill-col" data-skill-category="frontend">
                     <div class="skill-col-title">🌐 Frontend</div>
                     <ul class="skill-list">
                         <li><i class="fab fa-html5"></i> HTML5</li>
                         <li><i class="fab fa-css3-alt"></i> CSS3</li>
                         <li><i class="fab fa-js-square"></i> JavaScript</li>
+                        <li><i class="fab fa-react"></i> React</li>
                         <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
                     </ul>
                 </div>
-                <div class="skill-col">
+                <div class="skill-col" data-skill-category="frontend">
                     <div class="skill-col-title">📱 Mobile & Backend</div>
                     <ul class="skill-list">
                         <li><i class="fab fa-react"></i> React Native</li>
@@ -162,19 +253,20 @@
 
                     </ul>
                 </div>
-                <div class="skill-col">
+                <div class="skill-col" data-skill-category="design">
                     <div class="skill-col-title">🎨 UX/UI Design</div>
                     <ul class="skill-list">
                         <li><i class="fab fa-figma"></i> Figma</li>
                         <li><i class="fas fa-layer-group"></i> Canva <span class="freelance">(freelance)</span></li>
                     </ul>
                 </div>
-                <div class="skill-col">
+                <div class="skill-col" data-skill-category="security">
                     <div class="skill-col-title">🛠 Tools</div>
                     <ul class="skill-list">
                         <li><i class="fab fa-git-alt"></i> Git</li>
                         <li><i class="fab fa-github"></i> GitHub</li>
-                        <li><i class="fas fa-brain"></i> Inteligencia Artificial</span></li>
+                        <li><i class="fas fa-brain"></i> IA aplicada <span class="in-progress">(formación)</span></li>
+                        <li><i class="fas fa-shield-alt"></i> Ciberseguridad <span class="in-progress">(formación)</span></li>
                         <li><i class="fas fa-code"></i> Dreamweaver</li>
                         <li><i class="fas fa-paint-brush"></i> CorelDRAW</li>
                         <li><i class="fas fa-image"></i> Fireworks</li>
@@ -194,7 +286,7 @@
                 <a href="https://jov-muebles.netlify.app/" target="_blank" rel="noopener noreferrer">
                     <img src="./img/logos/jov_logo.png" alt="jov-muebles">
                 </a>
-                <a href=https://errante-fotografia.netlify.app/ target="_blank" rel="noopener noreferrer">
+                <a href="https://errante-fotografia.netlify.app/" target="_blank" rel="noopener noreferrer">
                     <img src="./img/logos/fotografia_logo.png" alt="errante-fotografia">
                 </a>
                 <a href="https://herreria-osky.netlify.app/" target="_blank" rel="noopener noreferrer">
@@ -206,11 +298,17 @@
                 <a href="https://q-comemos.com.ar" target="_blank" rel="noopener noreferrer">
                     <img src="./img/logos/q-comemos_logo.png" alt="q-comemos">
                 </a>
+                <a href="https://elgran-as.github.io/q_comemos_pedidos/" target="_blank" rel="noopener noreferrer">
+                    <img class="order-app-logo" src="./img/logos/q-comemos-pedidos_logo.svg" alt="Q´ Comemos Pedidos">
+                </a>
                 <a href="https://l14-corp.netlify.app/" target="_blank" rel="noopener noreferrer">
                     <img src="./img/logos/L14-corp_logo.png" alt="L14-Corp">
                 </a>
                 <a href="https://jc-automocion.netlify.app" target="_blank" rel="noopener noreferrer">
                     <img src="./img/logos/jc-automocion_logo.png" alt="jc-automocion">
+                </a>
+                <a href="https://elgran-as.github.io/TERAPISTA-OCUPACIONAL/" target="_blank" rel="noopener noreferrer">
+                    <img src="./img/logos/terapia-ocupacional_logo.svg" alt="Terapia ocupacional">
                 </a>
                 <!-- Repite los logos para efecto infinito -->
                 <a href="https://elgran-as.github.io/paz-animal/" target="_blank" rel="noopener noreferrer">
@@ -231,11 +329,17 @@
                 <a href="https://q-comemos.com.ar" target="_blank" rel="noopener noreferrer">
                     <img src="./img/logos/q-comemos_logo.png" alt="q-comemos">
                 </a>
+                <a href="https://elgran-as.github.io/q_comemos_pedidos/" target="_blank" rel="noopener noreferrer">
+                    <img class="order-app-logo" src="./img/logos/q-comemos-pedidos_logo.svg" alt="Q´ Comemos Pedidos">
+                </a>
                 <a href="https://l14-corp.netlify.app" target="_blank" rel="noopener noreferrer">
                     <img src="./img/logos/L14-corp_logo.png" alt="L14-Corp">
                 </a>
                 <a href="https://jc-automocion.netlify.app" target="_blank" rel="noopener noreferrer">
                     <img src="./img/logos/jc-automocion_logo.png" alt="jc-automocion">
+                </a>
+                <a href="https://elgran-as.github.io/TERAPISTA-OCUPACIONAL/" target="_blank" rel="noopener noreferrer">
+                    <img src="./img/logos/terapia-ocupacional_logo.svg" alt="Terapia ocupacional">
                 </a>
             </div>
         </div>
@@ -244,6 +348,40 @@
         <div class="container">
             <h2 class="section-title">Proyectos Destacados</h2>
             <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image logo-project-image">
+                        <img src="./img/logos/q-comemos-pedidos_logo.svg" alt="Logo de Q´ Comemos Pedidos">
+                    </div>
+                    <div class="project-info">
+                        <h3>Q´ Comemos Pedidos</h3>
+                        <p>Aplicación para pedir hamburguesas, pizzas, papas fritas y empanadas.</p>
+                        <div class="project-tags">
+                            <span>Pedidos online</span>
+                            <span>Gastronomía</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://elgran-as.github.io/q_comemos_pedidos/" class="btn btn-small"
+                                target="_blank" rel="noopener noreferrer">Abrir aplicación</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image logo-project-image">
+                        <img src="./img/logos/terapia-ocupacional_logo.svg" alt="Logo de Terapia Ocupacional">
+                    </div>
+                    <div class="project-info">
+                        <h3>Sitio web de Terapia Ocupacional</h3>
+                        <p>Sitio profesional con información sobre servicios, metodología y solicitud de turnos.</p>
+                        <div class="project-tags">
+                            <span>Diseño web</span>
+                            <span>Salud</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://elgran-as.github.io/TERAPISTA-OCUPACIONAL/" class="btn btn-small"
+                                target="_blank" rel="noopener noreferrer">Visitar sitio</a>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card">
                     <div class="project-image">
                         <img src="./img/proyect/L14-corp.png" alt="L14-Corp">
@@ -321,11 +459,7 @@
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>ariel.salvia78@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+54 11 </span>
+                            <a href="mailto:ariel.salvia78@gmail.com">ariel.salvia78@gmail.com</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -342,24 +476,32 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formsubmit.co/ajax/ariel.salvia78@gmail.com"
+                        method="POST" accept-charset="UTF-8">
+                        <input type="hidden" name="_template" value="table">
+                        <div class="form-trap" aria-hidden="true">
+                            <label for="website">No completar este campo</label>
+                            <input type="text" id="website" name="_honey" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" maxlength="100" autocomplete="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" maxlength="254" autocomplete="email" required>
                         </div>
                         <div class="form-group">
                             <label for="subject">Asunto</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <input type="text" id="subject" name="subject" maxlength="120" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Mensaje</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea id="message" name="message" rows="5" minlength="10" maxlength="3000"
+                                required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        <button type="submit" class="btn btn-primary">Enviar consulta</button>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
@@ -371,12 +513,14 @@
             <div class="footer-content">
                 <div class="logo-portfolio">
                     <a href="#inicio" aria-label="Inicio">
-                        <img src="./img/logos/logo-portfolio-footer.png" alt="Logo Portfolio" />
+                        <img src="./img/logos/logo-portfolio-footer-warm.svg" alt="AAS Dev" />
+                        <span class="logo-dev-label" aria-hidden="true">DEV</span>
                     </a>
                 </div>
                 <div class="footer-links">
                     <a href="#inicio">Inicio</a>
                     <a href="#sobre-mi">Sobre Mí</a>
+                    <a href="#servicios">Servicios</a>
                     <a href="#habilidades">Habilidades</a>
                     <a href="#proyectos">Proyectos</a>
                     <a href="#contacto">Contacto</a>
@@ -397,7 +541,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Portfolio Desarrollador Frontend. Todos los derechos
+                <p>&copy; <span id="currentYear"></span> Ariel Salvia · Desarrollo web y UX/UI. Todos los derechos
                     reservados.</p>
             </div>
         </div>
