@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="author" content="Ariel Salvia">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
     <meta name="description"
         content="Portfolio de Ariel Salvia: diseño UX/UI y desarrollo de sitios web y aplicaciones para negocios. Conoce sus proyectos y solicita una propuesta.">
     <meta name="keywords"
@@ -70,6 +73,10 @@
                             data-skill-focus="frontend" aria-pressed="false">
                             <span class="character-art">
                                 <img src="./img/card-frontend.svg" alt="" class="character-image" fetchpriority="high">
+                                <video class="character-image character-video" id="frontendVideo" muted loop
+                                    playsinline preload="none" aria-hidden="true">
+                                    <source src="./img/frontend.mp4" type="video/mp4">
+                                </video>
                                 <span class="character-level">LVL 01</span>
                                 <span class="character-watermark" aria-hidden="true">AAS · DEV</span>
                             </span>
@@ -79,6 +86,10 @@
                             data-skill-focus="design" aria-pressed="false">
                             <span class="character-art">
                                 <img src="./img/card-ux-ui.svg" alt="" class="character-image">
+                                <video class="character-image character-video" id="designVideo" muted loop
+                                    playsinline preload="none" aria-hidden="true">
+                                    <source src="./img/uxui.mp4" type="video/mp4">
+                                </video>
                                 <span class="character-level">LVL 02</span>
                                 <span class="character-watermark" aria-hidden="true">AAS · DEV</span>
                             </span>
@@ -87,9 +98,9 @@
                         <button class="character-card" type="button" data-character="Ciberseguridad"
                             data-skill-focus="security" aria-pressed="false">
                             <span class="character-art">
+                                <img src="./img/card-cybersecurity.svg" alt="" class="character-image">
                                 <video class="character-image character-video" id="cybersecurityVideo" muted loop
-                                    playsinline preload="metadata" poster="./img/character-cybersecurity.png"
-                                    aria-label="Video de ciberseguridad">
+                                    playsinline preload="none" aria-hidden="true">
                                     <source src="./img/cybersecurity.mp4" type="video/mp4">
                                 </video>
                                 <span class="character-level">LVL 03</span>
@@ -249,7 +260,8 @@
                         <li><i class="fas fa-fire"></i> Firebase</li>
                         <li><i class="fas fa-sync-alt"></i> Redux Toolkit</li>
                         <li><i class="fab fa-node-js"></i> Node.js <span class="in-progress">(in progress)</span></li>
-                        <li><i class="fab fa-python"></i> Python <span class="in-progress">(in progress)</span></li>
+                        <li><i class="fab fa-node-js"></i> React.js <span class="in-progress">(in progress)</span></li>
+                        <li><i class="fab fa-python"></i> Python</li>
 
                     </ul>
                 </div>
@@ -266,7 +278,7 @@
                         <li><i class="fab fa-git-alt"></i> Git</li>
                         <li><i class="fab fa-github"></i> GitHub</li>
                         <li><i class="fas fa-brain"></i> IA aplicada <span class="in-progress">(formación)</span></li>
-                        <li><i class="fas fa-shield-alt"></i> Ciberseguridad <span class="in-progress">(formación)</span></li>
+                        <li><i class="fas fa-shield-alt"></i> Ciberseguridad </li>
                         <li><i class="fas fa-code"></i> Dreamweaver</li>
                         <li><i class="fas fa-paint-brush"></i> CorelDRAW</li>
                         <li><i class="fas fa-image"></i> Fireworks</li>
@@ -541,8 +553,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="currentYear"></span> Ariel Salvia · Desarrollo web y UX/UI. Todos los derechos
-                    reservados.</p>
+                <p>&copy; <span id="currentYear"></span> Ariel Salvia. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

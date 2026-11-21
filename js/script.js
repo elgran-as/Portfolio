@@ -1,4 +1,9 @@
 const accentHueStorageKey = 'portfolio-accent-hue';
+const yearSpan = document.getElementById('currentYear');
+if (yearSpan) {
+    yearSpan.textContent = String(new Date().getFullYear());
+}
+
 let previousAccentHue;
 try {
     previousAccentHue = Number.parseInt(localStorage.getItem(accentHueStorageKey), 10);
@@ -17,12 +22,6 @@ try {
     console.warn('No se pudo guardar el color para la próxima visita:', error);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const yearSpan = document.getElementById("currentYear");
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
-});
 // Navegación móvil
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
@@ -47,32 +46,70 @@ if (hamburger && navLinks) {
     });
 
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') setNavigationOpen(false);
+        if (event.key === 'Escape' && hamburger.getAttribute('aria-expanded') === 'true') {
+            setNavigationOpen(false);
+            hamburger.focus();
+        }
+    });
+
+    document.addEventListener('click', event => {
+        if (hamburger.getAttribute('aria-expanded') !== 'true' || !(event.target instanceof Node)) return;
+        if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+            setNavigationOpen(false);
+        }
     });
 }
 
 const characterCards = document.querySelectorAll('.character-card');
 const characterStatusText = document.getElementById('characterStatusText');
 const skillCards = document.querySelectorAll('.skill-col[data-skill-category]');
-const cybersecurityVideo = document.getElementById('cybersecurityVideo');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-if (cybersecurityVideo && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    cybersecurityVideo.play().catch(error => {
-        console.warn('No se pudo reproducir automáticamente el video de ciberseguridad:', error);
+const playCardVideo = video => {
+    if (!video || prefersReducedMotion.matches) return;
+    video.play().catch(error => {
+        if (error.name !== 'AbortError') {
+            const character = video.closest('.character-card')?.dataset.character || 'la tarjeta';
+            console.warn(`No se pudo reproducir el video de ${character}:`, error);
+        }
     });
-}
+};
+
+prefersReducedMotion.addEventListener('change', event => {
+    if (event.matches) {
+        document.querySelectorAll('.character-video').forEach(video => video.pause());
+    }
+});
 
 characterCards.forEach(card => {
     const art = card.querySelector('.character-art');
+    const video = card.querySelector('.character-video');
+
+    if (video) {
+        card.addEventListener('pointerenter', event => {
+            if (event.pointerType !== 'touch') playCardVideo(video);
+        });
+        card.addEventListener('pointerleave', () => {
+            if (!card.classList.contains('is-active') && !card.matches(':focus-within')) {
+                video.pause();
+            }
+        });
+        card.addEventListener('focusin', () => playCardVideo(video));
+        card.addEventListener('focusout', event => {
+            if (!card.contains(event.relatedTarget) && !card.classList.contains('is-active')) {
+                video.pause();
+            }
+        });
+    }
 
     card.addEventListener('pointermove', event => {
-        if (event.pointerType === 'touch' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (event.pointerType === 'touch' || prefersReducedMotion.matches) return;
 
         const bounds = card.getBoundingClientRect();
         const pointerX = (event.clientX - bounds.left) / bounds.width;
         const pointerY = (event.clientY - bounds.top) / bounds.height;
 
-        if (art && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        if (art && !prefersReducedMotion.matches) {
             art.style.setProperty('--tilt-x', `${(0.5 - pointerY) * 12}deg`);
             art.style.setProperty('--tilt-y', `${(pointerX - 0.5) * 14}deg`);
         }
@@ -91,10 +128,13 @@ characterCards.forEach(card => {
             const isSelected = otherCard === card;
             otherCard.classList.toggle('is-active', isSelected);
             otherCard.setAttribute('aria-pressed', String(isSelected));
+            const otherVideo = otherCard.querySelector('.character-video');
+            if (otherVideo && otherVideo !== video) otherVideo.pause();
         });
         skillCards.forEach(skillCard => {
             skillCard.classList.toggle('is-highlighted', skillCard.dataset.skillCategory === selectedSkill);
         });
+        if (video) playCardVideo(video);
         if (characterStatusText) {
             characterStatusText.textContent = `${card.dataset.character} seleccionado · Habilidades relacionadas resaltadas`;
         }
@@ -283,9 +323,3 @@ window.addEventListener('load', () => {
 document.querySelectorAll('img').forEach(img => {
     img.setAttribute('draggable', 'false');
 });
-
-document.addEventListener('contextmenu', event => {
-    if (event.target instanceof Element && event.target.closest('img, picture')) {
-        event.preventDefault();
-    }
-}, true);
