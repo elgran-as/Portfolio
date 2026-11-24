@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
+        content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
     <meta name="description"
         content="Portfolio de Ariel Salvia: diseño UX/UI y desarrollo de sitios web y aplicaciones para negocios. Conoce sus proyectos y solicita una propuesta.">
     <meta name="keywords"
@@ -28,8 +28,7 @@
             <nav class="navbar">
                 <div class="logo-portfolio">
                     <a href="#inicio" aria-label="Inicio">
-                        <img src="./img/logos/logo-portfolio-warm.svg" alt="AAS Dev" />
-                        <span class="logo-dev-label" aria-hidden="true">DEV</span>
+                        <img src="./img/logos/logo-portfolio.png" alt="Logo de AAS Dev" />
                     </a>
                 </div>
                 <ul class="nav-links" id="primary-navigation">
@@ -488,12 +487,12 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm" action="https://formsubmit.co/ajax/ariel.salvia78@gmail.com"
-                        method="POST" accept-charset="UTF-8">
-                        <input type="hidden" name="_template" value="table">
+                    <form id="contactForm" name="contact" action="/" method="POST" data-netlify="true"
+                        netlify-honeypot="bot-field" accept-charset="UTF-8">
+                        <input type="hidden" name="form-name" value="contact">
                         <div class="form-trap" aria-hidden="true">
-                            <label for="website">No completar este campo</label>
-                            <input type="text" id="website" name="_honey" tabindex="-1" autocomplete="off">
+                            <label for="bot-field">No completar este campo</label>
+                            <input type="text" id="bot-field" name="bot-field" tabindex="-1" autocomplete="off">
                         </div>
                         <div class="form-group">
                             <label for="name">Nombre</label>
@@ -525,8 +524,7 @@
             <div class="footer-content">
                 <div class="logo-portfolio">
                     <a href="#inicio" aria-label="Inicio">
-                        <img src="./img/logos/logo-portfolio-footer-warm.svg" alt="AAS Dev" />
-                        <span class="logo-dev-label" aria-hidden="true">DEV</span>
+                        <img src="./img/logos/logo-portfolio.png" alt="Logo de AAS Dev" />
                     </a>
                 </div>
                 <div class="footer-links">

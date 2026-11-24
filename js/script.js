@@ -191,28 +191,14 @@ if (contactForm) {
         try {
             const response = await fetch(contactForm.action, {
                 method: 'POST',
-                body: new FormData(contactForm),
-                headers: { Accept: 'application/json' },
+                body: new URLSearchParams(new FormData(contactForm)),
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 signal: controller.signal
             });
-            const responseText = await response.text();
-            let result;
-
-            try {
-                result = JSON.parse(responseText);
-            } catch (error) {
-                console.error('Respuesta no válida del servicio de correo:', response.status, error);
-                throw new Error('invalid-response');
-            }
-
-            if (!response.ok || (result.success !== true && result.success !== 'true')) {
+            if (!response.ok) {
                 if (formStatus) {
                     formStatus.classList.add('is-error');
-                    const activationRequired = typeof result.message === 'string'
-                        && /needs activation|activate form/i.test(result.message);
-                    formStatus.textContent = activationRequired
-                        ? 'FormSubmit requiere activar el formulario. Revisá la bandeja de ariel.salvia78@gmail.com, abrí el enlace de activación y luego volvé a probar.'
-                        : 'No se pudo enviar la consulta. Revisá los datos e intentá nuevamente.';
+                    formStatus.textContent = 'No se pudo enviar la consulta. Revisá los datos e intentá nuevamente.';
                 }
                 return;
             }
@@ -227,10 +213,8 @@ if (contactForm) {
             if (formStatus) {
                 formStatus.classList.add('is-error');
                 formStatus.textContent = error.name === 'AbortError'
-                    ? 'No recibimos confirmación del envío. Revisá tu correo antes de volver a intentarlo para evitar duplicados.'
-                    : error.message === 'invalid-response'
-                        ? 'El servicio de correo respondió de forma inesperada. Intentá nuevamente más tarde.'
-                    : 'No se pudo conectar con el servicio de correo. Revisá tu conexión e intentá nuevamente.';
+                    ? 'No recibimos confirmación del envío. Revisá el estado de la consulta antes de volver a intentarlo para evitar duplicados.'
+                    : 'No se pudo conectar con el servicio de formularios. Revisá tu conexión e intentá nuevamente.';
             }
         } finally {
             window.clearTimeout(timeoutId);
